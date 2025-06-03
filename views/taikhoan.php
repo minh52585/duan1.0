@@ -28,13 +28,17 @@
 
                                     <a href="#account-info" data-bs-toggle="tab"><i class="fa fa-user"></i> Thông Tin
                                         Tài Khoản</a>
-                                    <a href="#orders" data-bs-toggle="tab"><i class="fa fa-cart-arrow-down"></i>
-                                        Đơn Hàng</a>
-
+                                    <a href="#" id="goToOrderHistory"><i class="fa fa-cart-arrow-down"></i> Đơn Hàng</a>
                                     <a href="<?= BASE_URL . '?act=logout' ?>"><i class="fa fa-sign-out"></i> Đăng
                                         Xuất</a>
                                 </div>
                             </div>
+                            <script>
+                                document.getElementById('goToOrderHistory').addEventListener('click', function(e) {
+                                e.preventDefault();
+                                window.location.href = '?act=lich-su-mua-hang';
+                            });
+                            </script>
                             <!-- My Account Tab Menu End -->
 
                             <!-- My Account Tab Content Start -->
