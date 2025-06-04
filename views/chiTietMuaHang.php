@@ -13,7 +13,7 @@
                                 <ul class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="<?= BASE_URL ?>"><i class="fa fa-home"></i></a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Bills Detall</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Chi tiet don hang</li>
                                 </ul>
                             </nav>
                         </div>
