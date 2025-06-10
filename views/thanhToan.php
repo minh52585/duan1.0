@@ -83,8 +83,9 @@
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
+                                                <th>Hình ảnh sản phẩm</th>
                                                 <th>Sản phẩm</th>
-                                                <th>Tổng</th>
+                                                <!-- <th>Tổng</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -97,9 +98,12 @@
 
                                             ?>
                                                 <tr>
+                                                    <td>
+                                                        <img src="<?= $sanPham['hinh_anh'] ?>" alt="<?= $sanPham['ten_san_pham'] ?>" style="width:60px; height:auto;">
+                                                    </td>
                                                     <td><a href="product-details.html"><?= $sanPham['ten_san_pham'] ?><strong> × <?= $sanPham['so_luong'] ?></strong></a>
                                                     </td>
-                                                    <td>
+                                                    <!-- <td>
                                                         <?php
                                                         $tongTien = 0;
                                                         if ($sanPham['gia_khuyen_mai'] > 0) {
@@ -108,9 +112,9 @@
                                                             $tongTien = $sanPham['gia_san_pham'] * $sanPham['so_luong'];
                                                         }
                                                         $tongGioHang += $tongTien;
-                                                        echo formatPrice($tongTien) . ' đ';
+                                                        // echo formatPrice($tongTien) . ' đ';
                                                         ?>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                             <?php } ?>
 
@@ -124,7 +128,7 @@
                                             <tr>
                                                 <td>Shipping</td>
                                                 <td class="d-flex justify-content-center">
-                                                    <strong>30000 đ</strong>
+                                                    <strong>30.000 đ</strong>
                                                 </td>
                                             </tr>
                                             <tr>

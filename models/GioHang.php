@@ -111,17 +111,16 @@ class GioHang
     }
 
 
-
-    public function deleteSanPhamGioHang($gioHangId)
-    {
-        try {
-            $sql = "DELETE FROM chi_tiet_gio_hangs WHERE gio_hang_id = :gioHangId";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->execute([':gioHangId' => $gioHangId]);
-            return true;
-        } catch (Exception $e) {
-            echo "Lỗi: " . $e->getMessage();
-        }
+public function deleteChiTietGioHang($chi_tiet_gio_hang_id)
+{
+    try {
+        $sql = "DELETE FROM chi_tiet_gio_hangs WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([':id' => $chi_tiet_gio_hang_id]);
+        return true;
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
     }
+}
 
 }

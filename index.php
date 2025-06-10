@@ -60,7 +60,7 @@ match ($act) {
     'gio-hang' => (new GioHangDonHangController())->gioHang(),
     'thanh-toan' => (new GioHangDonHangController())->thanhToan(),
     'xu-ly-thanh-toan' => (new GioHangDonHangController())->postThanhToan(),
-    'xoa-san-pham-gio-hang' => (new GioHangDonHangController())->xoaSp(),
+    'xoaSanPhamGioHang' => (new GioHangDonHangController())->xoaSp(),
     'da-dat-hang' => (new GioHangDonHangController())->daDatHang(),
     "cap-nhat-gio-hang" => (new GioHangDonHangController())->capNhatGioHang(),
 

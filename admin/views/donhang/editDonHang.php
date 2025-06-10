@@ -16,6 +16,15 @@ include "./views/layout/header.php"
         <?php
         include "./views/layout/sidebar.php"
         ?>
+        <?php
+            $trangThaiThanhToanText = [
+                1 => 'Chưa thanh toán',
+                2 => 'Đã thanh toán',   
+            ];
+
+            $trangThai = $donHang['trang_thai_thanh_toan_id'] ?? null;
+            $tenTrangThai = $trangThaiThanhToanText[$trangThai] ?? 'Không xác định';
+            ?>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -79,7 +88,12 @@ include "./views/layout/header.php"
                                     </div>
                                     <!-- /.card-body -->
                                     <hr>
-
+                                  <div class="form-group">
+                                    <label for="">Trạng thái thanh toán</label>
+                                    <input type="text" class="form-control" 
+                                        value="<?= htmlspecialchars($tenTrangThai) ?>" 
+                                        readonly disabled>
+                                </div>
                                     <div class="form-group">
                                         <label for="inputStatus">Trạng thái đơn hàng</label>
                                         <select id="inputStatus" name="trang_thai_id" class="form-control custom-select">

@@ -157,7 +157,7 @@ class GioHangDonHangController
             }
 
             // Xóa toàn bộ sản phẩm trong giỏ hàng
-            $this->modelGioHang->deleteSanPhamGioHang($gioHang['id']);
+            $this->modelGioHang->deleteChiTietGioHang($chi_tiet_gio_hang_id);
         } else {
             header('Location:' . BASE_URL . '?act=login');
         }
@@ -295,25 +295,14 @@ class GioHangDonHangController
             echo "Gửi mail thất bại Mailer Error: {$mail->ErrorInfo}";
         }
     }
-
-
-
-
-
-
-
-
-
-    public function xoaSp()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $chi_tiet_gio_hang_id = $_POST['chi_tiet_gio_hang_id'];
-            $xoa = $this->modelGioHang->deleteSanPhamGioHang($chi_tiet_gio_hang_id);
-            // var_dump($xoa);
-            // die();
-            header('Location:' . BASE_URL . '?act=gio-hang');
-        }
+public function xoaSp()
+{
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $chi_tiet_gio_hang_id = $_POST['chi_tiet_gio_hang_id'];
+        $xoa = $this->modelGioHang->deleteChiTietGioHang($chi_tiet_gio_hang_id);
+        header('Location:' . BASE_URL . '?act=gio-hang');
     }
+}
     public function lichSuDonHang() {
         // Giả sử bạn có model DonHang.php với method lấy đơn hàng theo user
         session_start();

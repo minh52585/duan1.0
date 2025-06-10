@@ -112,7 +112,10 @@
                                             <h6 class="option-title">Số lượng:</h6>
                                             <div class="quantity">
                                                 <input type="hidden" name="san_pham_id" value="<?= $sanPham['id'] ?>">
-                                                <div class="pro-qty"><input type="text" value="1" name="so_luong"></div>
+                                                <div class="pro-qty">
+                                                    <input type="number" value="1" name="so_luong" min="1" max="<?= $sanPham['so_luong'] ?>">
+                                                    <div id="soLuongMsg" style="color: #dc3545; font-size: 14px; margin-top: 4px; display: none;"></div>
+                                                </div>
                                             </div>
                                             <div class="action_link">
                                                 <button class="btn btn-cart2" type="submit">Thêm vào giỏ hàng</button>
@@ -342,6 +345,25 @@
             const img = imgContainer.querySelector('img');
             img.style.transformOrigin = 'center center';
             img.style.transform = 'scale(1)';
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        var soLuongInput = document.querySelector('input[name="so_luong"]');
+        var msg = document.getElementById('soLuongMsg');
+        var maxQty = parseInt(soLuongInput.getAttribute('max'));
+        soLuongInput.addEventListener('input', function() {
+            if (parseInt(this.value) > maxQty) {
+                msg.textContent = 'Hiện tại bên shop không đủ sản phẩm (' + maxQty + ' sản phẩm còn lại)';
+                msg.style.display = 'block';
+                this.value = maxQty;
+            } else if (parseInt(this.value) < 1) {
+                msg.textContent = 'Số lượng tối thiểu là 1';
+                msg.style.display = 'block';
+                this.value = 1;
+            } else {
+                msg.textContent = '';
+                msg.style.display = 'none';
+            }
         });
     });
 </script>
