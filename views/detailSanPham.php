@@ -6,14 +6,12 @@
         overflow: hidden;
         width: 100%;
         height: 400px;
-        /* Điều chỉnh chiều cao theo thiết kế */
     }
 
     .pro-large-img img {
         width: 100%;
         height: 100%;
         transition: transform 0.3s ease-in-out;
-        /* Hiệu ứng thu phóng */
     }
 
     .pro-large-img:hover img {
@@ -220,7 +218,7 @@
                 <div class="col-12">
                     <!-- section title start -->
                     <div class="section-title text-center">
-                        <h2 class="title">Sản phẩm liên quan</h2>
+                        <h2 class="title">Sản phẩm lien quan</h2>
                         <p class="sub-title"></p>
                     </div>
                     <!-- section title start -->
